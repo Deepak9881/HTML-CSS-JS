@@ -9,18 +9,26 @@
            width: fit-content;
         
         } 
+        blockqoute{
+            font-style: italic;
+        }
     </style>
     <script>
         let arr=[]
         function insert()
         {
             arr.push(document.getElementById("i1").value)
-            document.getElementById("p1").innerText=arr
+            document.getElementById("p1").innerText=`[${arr}]`
             document.getElementById('i1').value=""
         }
         function freeze(str)
         {   if(str=="freeze")
             document.getElementById("i1").readOnly=true
+            else if(str=="reset")
+           { let x=arr.length
+            arr.splice(0,x)
+            document.getElementById("p1").innerText=`[${arr}]`
+           }
             else 
             document.getElementById("i1").readOnly=false
         }
@@ -28,7 +36,7 @@
         { let from=document.getElementById("i2").value
           let len=document.getElementById("i3").value
           arr.splice(from,len)
-          document.getElementById("p2").innerText=arr
+          document.getElementById("p2").innerText=`[${arr}]`
         
         }
         function insertele()
@@ -36,7 +44,7 @@
             let from=document.getElementById("i4").value
           let elements=document.getElementById("i5").value
           arr.splice(from,0,elements)
-          document.getElementById("p3").innerText=arr
+          document.getElementById("p3").innerText=`[${arr}]`
         }
         function search()
         {
@@ -50,35 +58,36 @@
     <div class="row">
         <div  class="col">
         
-            <blockquote>Insert elements and append into an Array </blockquote> 
-        <input type="text" id="i1" placeholder="Enter elements">
-        <button onclick="insert()">Insert element</button>
+            <blockquote><b>Insert elements and append into an Array</b></blockquote> 
+        <input type="text" id="i1" placeholder="Enter elements"><br><br>
+        <button onclick="insert()">Insert element</button><br><br>
         <button onclick="freeze('freeze')"> Freeze</button>
         <button onclick="freeze('free')">Free</button>
-        <pre style="border: 1px; border-style: groove;width: fit-content;">[<span id="p1"></span>]</pre>
+        <button onclick="freeze('reset')">Reset</button>
+        <pre style="border: 1px; border-style: groove;width: fit-content;"><span id="p1"></span></pre>
         </div>
         <div  class="col">
-            <blockquote>Delete from Array </blockquote> 
+            <blockquote><b>Delete from Array </b></blockquote> 
             Please provide index number 
             <input type="number" id="i2" ><br><br>
             Enter number of elements to be deleted
             <input type="number" id="i3"><br><br><br>
             <button onclick="deleteele()">View updated array</button>
-            <pre style="border: 1px; border-style: groove;width: fit-content;">[<span id="p2"></span>]</pre>
+            <pre style="border: 1px; border-style: groove;width: fit-content;"><span id="p2"></span></pre>
         </div>
         
         <div class="col">
-            <blockquote>Insert into Array </blockquote> 
+            <blockquote><b>Insert into Array</b> </blockquote> 
             Please provide index number 
             <input type="number" id="i4" ><br><br>
             Enter number of elements to be inserted
             <input type="text" id="i5"><br><br><br>
             <button onclick="insertele()">View updated array</button>
-            <pre style="border: 1px; border-style: groove;width: fit-content;">[<span id="p3"></span>]</pre>
+            <pre style="border: 1px; border-style: groove;width: fit-content;"><span id="p3"></span></pre>
         </div>
         
         <div class="col">
-            <blockquote>Search element into Array </blockquote> 
+            <blockquote><b>Search element into Array</b> </blockquote> 
             Please provide a number 
             <input type="number" id="i6" ><br><br>
             <button onclick="search()">Get Index</button>
