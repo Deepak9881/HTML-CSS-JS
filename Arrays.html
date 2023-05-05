@@ -1,0 +1,91 @@
+<html >
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        div{
+          
+           border-style: groove;
+           background-color: bisque;
+           width: fit-content;
+        
+        } 
+    </style>
+    <script>
+        let arr=[]
+        function insert()
+        {
+            arr.push(document.getElementById("i1").value)
+            document.getElementById("p1").innerText=arr
+            document.getElementById('i1').value=""
+        }
+        function freeze(str)
+        {   if(str=="freeze")
+            document.getElementById("i1").readOnly=true
+            else 
+            document.getElementById("i1").readOnly=false
+        }
+        function deleteele()
+        { let from=document.getElementById("i2").value
+          let len=document.getElementById("i3").value
+          arr.splice(from,len)
+          document.getElementById("p2").innerText=arr
+        
+        }
+        function insertele()
+        {
+            let from=document.getElementById("i4").value
+          let elements=document.getElementById("i5").value
+          arr.splice(from,0,elements)
+          document.getElementById("p3").innerText=arr
+        }
+        function search()
+        {
+            let elements=document.getElementById("i6").value
+            let index=arr.indexOf(elements)
+            document.getElementById("p4").innerText=`Element found at index[${index}]`
+        }
+    </script>
+</head>
+<body>
+    <div class="row">
+        <div  class="col">
+        
+            <blockquote>Insert elements and append into an Array </blockquote> 
+        <input type="text" id="i1" placeholder="Enter elements">
+        <button onclick="insert()">Insert element</button>
+        <button onclick="freeze('freeze')"> Freeze</button>
+        <button onclick="freeze('free')">Free</button>
+        <pre style="border: 1px; border-style: groove;width: fit-content;">[<span id="p1"></span>]</pre>
+        </div>
+        <div  class="col">
+            <blockquote>Delete from Array </blockquote> 
+            Please provide index number 
+            <input type="number" id="i2" ><br><br>
+            Enter number of elements to be deleted
+            <input type="number" id="i3"><br><br><br>
+            <button onclick="deleteele()">View updated array</button>
+            <pre style="border: 1px; border-style: groove;width: fit-content;">[<span id="p2"></span>]</pre>
+        </div>
+        
+        <div class="col">
+            <blockquote>Insert into Array </blockquote> 
+            Please provide index number 
+            <input type="number" id="i4" ><br><br>
+            Enter number of elements to be inserted
+            <input type="text" id="i5"><br><br><br>
+            <button onclick="insertele()">View updated array</button>
+            <pre style="border: 1px; border-style: groove;width: fit-content;">[<span id="p3"></span>]</pre>
+        </div>
+        
+        <div class="col">
+            <blockquote>Search element into Array </blockquote> 
+            Please provide a number 
+            <input type="number" id="i6" ><br><br>
+            <button onclick="search()">Get Index</button>
+            <pre id="p4"></pre>
+        </div>
+    </div>
+    
+     
+</body>
+</html>
