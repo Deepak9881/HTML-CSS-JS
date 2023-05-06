@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <script>
+        function f1() {
+            let da = new Date(document.getElementById("d1").value)
+            let cur1 = Date()
+            let cur = new Date(cur1)
+            let diff = ((cur - da) / (1000 * 60 * 60 * 24 * 365))
+            let diff1 = parseInt((cur - da) / (1000 * 60 * 60 * 24 * 365))
+            let diff2 = parseInt((diff - diff1) * 12)
+            document.getElementById("p1").innerHTML = `<h1>Age: ${diff1} years and ${diff2} months</h1>`
+        }
+    </script>
+</head>
+
+<body>
+    <label for="d1"> Date :</label><input type="date" onchange="f1()" id="d1">
+    <p id="p1"></p>
+</body>
+
+</html>

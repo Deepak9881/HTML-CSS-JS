@@ -1,0 +1,18 @@
+<html>
+    <head>
+    <script>
+    const days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    function f1()
+    {  
+        let da=new Date(document.getElementById("d1").value)
+    
+        document.getElementById("p1").innerHTML=`DayName is ${days[da.getDay()]}`
+      
+    }
+    </script>
+    </head>
+    <body>
+      <label for="d1"> Date :</label><input type="date" onchange="f1()" id="d1" >
+      <p id="p1"></p>
+    </body>
+</html>
