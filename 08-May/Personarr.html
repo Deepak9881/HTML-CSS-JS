@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <script>
+        let arr = []
+        function details(name, age) {
+            this.pName = name;
+            this.pAge = age
+        }
+        function person() {
+
+            let name = document.getElementById("i1").value
+            console.log(name)
+            let age = document.getElementById("i2").value
+            arr.push(new details(name, age))
+            document.getElementById("i1").value = ""
+            document.getElementById("i2").value = ""
+        }
+        function display() {
+            let str = ''
+            for (x in arr) {
+                str = str.concat("Personname:   ", arr[x].pName, "   ", "Age:", arr[x].pAge, "<br>")
+
+            }
+            document.getElementById("p1").innerHTML = `<b>${str}</b>`
+        }
+        function reset() {
+            for (let i = 0; i < arr.length; i++) {
+                arr.pop()
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <b>Enter Name:</b> <input type="text" id="i1" />
+    <b> Enter age:</b> <input type="number" id="i2" onchange="person()" />
+    <br><br>
+    <button id="b1" onclick="display()"> Click here to get details</button>
+    <button id="'b2" onclick="reset()"> Reset values</button>
+    <p id="p1"></p>
+
+</body>
+
+</html>

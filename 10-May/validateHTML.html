@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+    </script>
+    <script>
+        function validateIt() {
+            let name = $("#i1").val();
+            let ne = $("#i2").val()
+            let dob = new Date(ne);
+            let cur = new Date()
+            let age = parseInt((cur - dob) / (1000 * 60 * 60 * 24 * 365))
+            let email = $("#i3").val()
+            let addr = $("#i4").val().toLowerCase()
+            console.log(addr)
+            let namec, agec, emailc, addrc;
+
+            //to check name
+            if (name.trim == "" || name.length < 2 || !isNaN(name)) {
+
+                alert("Enter a non-empty name which has characters>2, does not contain numbers")
+                namec = false
+            }
+            else {
+                namec = true
+            }
+
+
+            //to check the age
+            if (age > 18 && age < 100) {
+                agec = true
+            }
+            else {
+                alert("Age should be greater than 18 and less than 100")
+                agec = false
+            }
+
+            //to check email address
+
+            if (email.length <= 0) {
+                alert("Please enter valid email")
+            } else {
+                for (let i = 0; i < email.length; i++) {
+                    let ch = email.charAt(i)
+                    if (ch == '.' && email.charAt(email.length - 3) == "." || email.charAt(email.length - 4) == ".") {
+                        emailc = true
+                        break
+
+                    }
+                    else { emailc = false }
+                }
+
+                if (emailc == false) {
+                    alert("Email should contain . character")
+                }
+            }
+
+            //to check address
+            if (addr.length <= 0) {
+                alert("Enter valid address")
+            } else {
+                let val1 = addr.match("pune")
+                console.log(val1)
+                if (val1 == null) {
+                    addrc = false
+                    alert("address should be of pune")
+                }
+                else {
+                    addrc = true
+                }
+            }
+
+
+            console.log(namec && agec && emailc && addrc)
+            return namec && agec && emailc && addrc
+
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div border="2"
+        style="margin: auto; width: fit-content; border-style:solid; background-color: bisque; padding: 10px;">
+        <form id="f1" onsubmit="return validateIt()" action="../Login.html">
+            <b>Enter a name:</b> <input type="text" id="i1"><br><br>
+            <b>Enter dob: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="date" id="i2"><br><br>
+            <b>Enter Email:</b>&nbsp;&nbsp; <input type="email" id="i3"><br><br>
+            <b>Enter address</b> <input type="text" id="i4">
+            <br><br> <button style="margin-left: 120px;">submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

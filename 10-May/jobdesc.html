@@ -1,0 +1,43 @@
+<!-- Write an html that is accepting a date of joining give a range using html
+validation , make it compulsary
+3.
+Add a text field to describe the job give minlength an max length
+Submit the form if the validations are false show messages
+If validations are OK then go to welcome.html -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function show() {
+            if (document.getElementById("i1").checkValidity()) {
+                document.getElementById("p1").innerHTML = `<b>Date of joining is OK!!!</b>`
+            }
+            else { document.getElementById("p1").innerHTML = `<b>${document.getElementById("i1").validationMessage}</b>` }
+
+            if (document.getElementById("i2").checkValidity()) {
+                document.getElementById("p2").innerHTML = `<b>Job Description is OK!!! </b>`
+            }
+            else { document.getElementById("p2").innerHTML = `<b>${document.getElementById("i2").validationMessage}</b>` }
+        }
+    </script>
+</head>
+
+<body>
+    <div border="3" style="background-color: bisque; width: fit-content;margin: auto;margin-top: 50px;padding: 10px;">
+        <form action="../Repsonse.html">
+            Enter a joining date:<input type="date" id="i1" min="2023-01-01" max="2023-12-31" required> <br><br>
+            Enter your job description: <input type="text" id="i2" minlength="20" maxlength="50" required><br><br>
+            <input type="submit" id="i3" onclick="show()" value="Click">
+            <p style="color :blueviolet"><b>Message for DOJ:</b></p>
+            <p id="p1"></p>
+            <p style="color :brown"><b>Message for JD:</b></p>
+            <p id="p2"></p>
+        </form>
+    </div>
+</body>
+
+</html>

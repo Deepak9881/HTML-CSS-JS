@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+    </script>
+    <script>
+        $().ready(() => {
+            $("#b1").click(() => {
+                let div = $("#d1");
+                div.animate({ marginLeft: "20%" }, "slow");
+                div.animate({ borderRadius: "10" });
+                div.animate({ marginLeft: "40%" }, "slow");
+
+                div.animate({ marginLeft: "60%" }, "slow");
+                div.animate({ marginLeft: "80%" }, "slow");
+                div.animate({ marginLeft: "60%" }, "slow");
+                div.animate({ borderRadius: "10" });
+                div.animate({ marginLeft: "40%" }, "slow");
+
+                div.animate({ marginLeft: "20%" }, "slow");
+                div.animate({ marginLeft: "10%" }, "slow");
+
+
+
+
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <p><button id="b1"> Move it</button></p>
+
+    <div id="d1" border="2px"
+        style="  width: fit-content; border: groove;height: 40px;background-image: linear-gradient(120deg, orange,white,yellow);">
+        Do whatever <br>it
+        takes!!!</div>
+</body>
+
+</html>

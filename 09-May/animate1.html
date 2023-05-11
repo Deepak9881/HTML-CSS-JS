@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+    </script>
+    <script>
+        $().ready(() => {
+            $("#b1").click(() => {
+                var div = $("#d1");
+
+                div.animate({ marginLeft: "200" }, "slow");
+                div.animate({ height: '300px' }, "slow");
+                div.animate({ width: '400px' }, "slow");
+                div.animate({ width: '200px', height: "100px" }, "slow");
+                div.animate({ marginLeft: "700px", marginTop: "500px" }, 6000);
+                div.fadeOut(600);
+
+                div.fadeIn(2000);
+                div.slideUp(2000);
+                div.animate({ marginLeft: "100" }, "slow");
+                div.slideDown(2000);
+
+
+
+
+
+
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <p><button id="b1"> Move it</button></p>
+
+    <div id="d1" style="background-color: aqua; width: fit-content; border: 2px;height: 40px;">Do whatever <br>it
+        takes!!!</div>
+</body>
+
+</html>

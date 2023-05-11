@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+    </script>
+    <script>
+        $().ready(() => {
+            $("#b1").click(() => {
+                $("#t1").text("")
+                let num = $("#i1").val()
+                let from = $("#i2").val()
+                let upto = $("#i3").val()
+                if (num == 0) {
+                }
+                else {
+
+                    for (let i = parseInt(from); i <= parseInt(upto); i++) {
+
+                        $("#t1").append(`<tr><td>${num}*${i}=</td><td>${num * i}</td></tr> <br>`)
+                    }
+
+                }
+            })
+        })
+
+
+    </script>
+</head>
+
+<body>
+    <div>
+        Enter a number<input type="num" id="i1">
+        From <input type="num" id="i2">
+        upto <input type="num" id="i3">
+        <br><br>
+        <button id="b1"> Generate table</button>
+        <br><br>
+        <table id="t1" border="2"></table>
+    </div>
+</body>
+
+</html>

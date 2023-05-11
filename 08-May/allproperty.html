@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <script>
+        function handler() {
+            let str = ''
+            for (x in document.getElementById("s1").style) {
+                str = str.concat(x + "<br>")
+            }
+            document.getElementById("p1").innerHTML = `<b>${str}</b>`
+        }
+    </script>
+</head>
+
+<body style="background-image: linear-gradient(150deg, red, yellow,green,brown);">
+    <div style="border:5px;width: fit-content; ">
+        <h1>Select the element to get styles:</h1>
+        <select id="s1" onchange="handler()">
+            <option value="input">input</option>
+            <option value="button">button</option>
+            <option value="select">select</option>
+            <option value="radio">radio</option>
+        </select>
+        <!-- <input type="text" id="i1"/> -->
+        <p id="p1"></p>
+    </div>
+</body>
+
+</html>

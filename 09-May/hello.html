@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+    </script>
+
+
+
+    <script>
+        $(document).ready(() => {
+            $("#b1").click(function () {
+                $("#p1").text("Hello")
+                $("#p2").html("<i>Hello</i>")
+                $("#p3").html("<u>Hello</u>")
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="b1"> <b>OK</b></button>
+    <p id="p1" style="font-size: xx-large;"></p>
+    <p id="p2" style="font-size: xx-large;"></p>
+    <p id="p3" style="font-size: xx-large;"></p>
+</body>
+
+</html>
