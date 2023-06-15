@@ -1,0 +1,30 @@
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            </script>
+        <script>
+            $().ready(()=>{
+                $("#b1").click(()=>{
+                $("#t1").text("");
+               let num1 =$("#i1").val();
+               let from =$("#i2").val();
+               let to =$("#i3").val();
+
+            
+                for(let i=from;i<=to;i++){
+                    $("#t1").append(`<tr><td>${num1}*${i}=</td><td>${num1*i}</td></tr>`);
+                }})
+            })
+            
+        </script>
+    </head>
+    <body>
+        <div border="2" style="border-style: groove;background-color: aqua; margin: auto;width: fit-content;padding: 5">
+              Enter a number:<input type="number" id="i1"><br><br>
+              Table from:<input type="number" id="i2"><br><br>
+              Table upto:<input type="number" id="i3"><br><br>
+              <input type="button" id="b1" value="Get Table" ><br><br>
+              <table id="t1" border="2" style="border-style: groove"></table>
+        </div>
+    </body>
+</html>

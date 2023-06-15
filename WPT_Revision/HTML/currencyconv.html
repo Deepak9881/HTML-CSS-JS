@@ -1,0 +1,68 @@
+<html>
+    <head>
+      <script>
+           function Convert(){
+              // let val=[1,80,90];
+             //  let curr=["Rs","Dr","Er"];
+               let num=document.getElementById("i1").value;
+               let cur1=document.getElementById("s1").value;
+               let cur2=document.getElementById("s2").value;
+            //    let pos1=curr.indexOf(cur1);
+            //    let pos2=curr.indexOf(cur2);
+            //    let value=num*(val[pos1]/val[pos2]);
+            //    document.getElementById("p1").innerHTML=`<h3>${num}Rupeese = ${val} Ruppese </h3>`;
+               if(num!=0){
+                switch(cur1){
+                   case "Rs":
+                            if(cur2=="Rs")
+                               document.getElementById("p1").innerHTML=`<h3>${num}Rupeese = ${num} Ruppese </h3>`;
+                             else if(cur2=="Dr")
+                                document.getElementById("p1").innerHTML=`<h3>${num}Rupeese = ${num/82} Dollar </h3>`;
+                           else
+                               document.getElementById("p1").innerHTML=`<h3>${num}Rupeese = ${num/90} Euro </h3>`;
+                        break;
+                    case "Dr":
+                            if(cur2=="Dr")
+                               document.getElementById("p1").innerHTML=`<h3>${num}Dollar = ${num} Dollar </h3>`;
+                            else if(cur2=="Rs")
+                              document.getElementById("p1").innerHTML=`<h3>${num}Dollar = ${num*82} Ruppese </h3>`;
+                            else
+                               document.getElementById("p1").innerHTML=`<h3>${num}Dollar = ${num*(0.8/0.9)} Euro </h3>`;
+                        break;
+                    case "Eu":
+                             if(cur2=="Eu")
+                               document.getElementById("p1").innerHTML=`<h3>${num}Euro = ${num} Euro </h3>`;
+                            else if(cur2=="Dr")
+                                document.getElementById("p1").innerHTML=`<h3>${num}Euro = ${num*(0.9/0.82)} Dollar </h3>`;
+                             else
+                                document.getElementById("p1").innerHTML=`<h3>${num}Euro = ${num/90} Rupeese </h3>`;
+                        break; 
+                           }
+                     }else{
+                     document.getElementById("p1").innerHTML=`<h3>Enter a valid number</h3>`
+                    }
+              }
+
+           
+        </script>
+    </head>
+    <body>
+        <div border="2" style="border-style: groove;background-color: aqua; margin: auto;width: fit-content;padding: 5">
+            <h2>Currency converter</h2>
+            <input type="number" id="i1" placeholder="Enter a number"><br><br>
+            <select id="s1">
+            <option value="">Select currency</option>
+            <option value="Rs">Rupeese</option>
+            <option value="Dr">Dollar</option>
+            <option value="Eu">Euro</option>    
+            </select>
+            <select  id="s2" onchange="Convert()">
+                <option value="">Select currency</option>
+                <option value="Rs">Rupeese</option>
+                <option value="Dr">Dollar</option>
+                <option value="Eu">Euro</option>    
+                </select><br><br>
+            <p id="p1"></p>
+        </div>
+    </body>
+</html>

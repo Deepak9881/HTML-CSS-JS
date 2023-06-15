@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        let arr=[10,20,30]
+        function arrops(){
+            let choice=document.getElementById("s1").value;
+            let num=document.getElementById("i1").value;
+            switch(choice){
+               case "addlast":
+                  arr.push(num);
+                  break;
+                 case "delete":
+                arr.pop();
+                break;
+               case "search":
+               let num1=prompt("Enter a number to be searched");
+               let str=""
+               let res=arr.indexOf(parseInt(num1));
+               console.log(res);
+               if(res!=-1){
+                   str=`Element found at position ${res}`
+               }else
+                  {
+                      str="Element not found"
+                  }
+                document.getElementById("p2").innerHTML=`<h3>${str}</h3>`
+                break;
+
+                case "addspe":
+                     let index=prompt("Enter an index")
+                     arr.splice(index,0,num);
+                     break;
+                case "delspe":
+                console.log("jhfjh")
+                let ind=prompt("enter an index")
+                arr.splice(ind,1)
+                break;
+                
+                       
+
+            }
+          
+        }
+
+        function display(){
+            let str="["
+            let count=0;
+            for(x of arr){
+                if(++count!=arr.length){
+            str=str.concat(x," ,");
+                }
+                else{
+                    str=str.concat(x);
+                }
+            }
+           str=str.concat("]");
+           document.getElementById("p1").innerHTML=`<h3>${str}</h3>`
+        }
+
+
+    </script>
+  
+</head>
+<body>
+        <input type="number" id="i1" placeholder="Enter a number">
+     <select onchange="arrops()" id="s1">
+         <option>Select</option>
+         <option value="addlast">Add element at Last</option>
+         <option value="delete">Delete last Element</option>
+         <option value="search">Search Element</option>
+         <option value="addspe">Add Element at index</option>
+         <option value="delspe">del Element at index</option>
+     </select>
+     <input type="button" id="i2" value="Show elements" onclick="display()">
+     <p id="p1"></p>
+     <p id="p2"></p>
+
+</body>
+</html>

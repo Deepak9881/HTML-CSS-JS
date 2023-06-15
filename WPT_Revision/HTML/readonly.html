@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+        function checked1(){
+            let cb=document.getElementById("c1");
+            if(cb.checked){
+                document.getElementById("i1").readOnly=true;
+            }else
+            document.getElementById("i1").readOnly=false;
+        }
+        </script>
+    </head>
+    <body>
+        <div  border="2" style="border-style: groove;background-color: aqua; margin: auto;width: fit-content;padding: 5">
+            <input type="text" id="i1"><br><br>
+            <input type="checkbox" id="c1" onchange="checked1()" >ReadOnly
+        </div>
+    </body>
+</html>

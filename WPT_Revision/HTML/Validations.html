@@ -1,0 +1,68 @@
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <script>
+                 let namec,emailc,agec,addrc;
+                    namec=emailc=agec=false;
+                function validateit(){
+                   
+                    $(document).ready(()=>{
+                        let name=$("#i1").val().toLowerCase();
+                        let email=$("#i2").val().toLowerCase();
+                        let bdate=$("#i3").val();
+                        let bdate1=new Date(bdate);
+                        let curr=new Date();
+                        let age=parseInt((curr-bdate1)/(1000*60*60*24*365));
+                    
+                        let address=$("#i4").val().toLowerCase();
+                       
+                       
+                        //to check name
+                        if(name.trim=="" || name.length<=2 || !isNaN(name))
+                        {
+                            alert("enter valid name")
+                            namec=false;
+                        }else{
+                            namec=true;
+                        }
+                        
+                        //to check email
+                        if(email.trim=="" ||email.length<=2 ){
+                            alert("enter valid email")
+                            emailc=false;
+                        }
+                        else{
+                            if(email.includes("@") && email.includes(".")&&email.indexOf("@")<email.indexOf(".")){
+                                emailc=true;
+                            }
+                        }
+                      
+
+                        if(age>18 && age<60){
+                            agec=true;
+                        }else{
+                            alert("enter valid age")
+                            agec=false;
+                        }
+                        
+                        
+                       
+                    })
+                    return namec&&emailc&&agec;
+                }
+            </script>
+
+    </head>
+    <body>
+        <div>
+            <form onsubmit="return validateit()" action="./ThankYou.html">
+            
+               Enter Email <input type="text" id="i1"><br><br>
+               Enter Email <input type="text" id="i2"><br><br>
+               Enter birthdate<input type="date" id="i3"><br><br>
+               Enter address <input type="text" id="i4">
+               <button>Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

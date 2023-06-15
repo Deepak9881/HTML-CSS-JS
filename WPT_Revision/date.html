@@ -1,0 +1,20 @@
+<html>
+
+<script>
+   function f1(){
+
+    let v=document.getElementById("l1").value;
+    let p=new Date(v);
+    //console.log(p.getDay())
+    let c=new Date()
+    c=p.getDay()
+    document.getElementById("p1").innerText=c
+   }
+  
+</script>
+
+<body>
+    <input type="date" id="l1" onclick="f1()">
+    <p id="p1"></p>
+</body>
+</html>

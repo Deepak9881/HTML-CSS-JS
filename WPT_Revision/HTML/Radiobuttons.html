@@ -1,0 +1,36 @@
+<html>
+    <head>
+       <script>
+        function handler(str){
+            let num=document.getElementById("i1").value;
+            if(num!=0){
+            switch(str)
+            {
+                case "r1":
+                        document.getElementById("p1").innerHTML=`<h2>Square ${num*num}</h2>`;
+                    break;
+                case "r2":
+                        document.getElementById("p1").innerHTML=`<h2>Cube ${num*num*num}</h2>`;
+                    break;
+                case "r3":
+                        document.getElementById("p1").innerHTML=`<h2>As it is ${num}</h2>`;
+                    break;
+                    }
+                }
+                else{
+                    document.getElementById("p1").innerHTML=`<h2>Enter a valid number </h2>`;
+                }
+        }
+        </script>
+    </head>
+    <body>
+        <div border="2" style="border-style: groove;background-color: aqua; margin: auto;width: fit-content;padding: 5">
+            Enter a number: <input type="number" id="i1"><br><br>
+            <input type="radio" id="r1" name="r" onchange="handler('r1')">Square</input><br><br>
+            <input type="radio" id="r2" name="r"  onchange="handler('r2')">Cube</input><br><br>
+            <input type="radio" id="r3" name="r"  onchange="handler('r3')">As it is</input><br><br>
+            <p id="p1"></p>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+           function getb(){
+               let bdate=new Date(document.getElementById("i1").value)
+               console.log(bdate)
+               let date=bdate.getDate();
+               let month=bdate.getMonth()+1;
+               let curr=new Date();
+               let yr=curr.getFullYear();
+               let str=yr+'-'+month+' '+date;
+               let curr1=new Date(str);
+               console.log(curr1);
+               let day=curr1.getDay();
+               console.log(day)
+               document.getElementById("p1").innerHTML=`${days[day]}`
+
+           }
+    </script>
+</head>
+<body>
+   Enter Birthdate:  <input type="date" id="i1" >
+   <input type="button" value="Get Birthday" onclick="getb()" >
+   <p id="p1"></p>
+</body>
+</html>
